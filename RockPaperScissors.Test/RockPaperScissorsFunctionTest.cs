@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using MLS.Framework.Common.Response;
+using MLS.Framework.Common.Enums;
+using MLS.Framework.Common.ResponseModel;
 using Moq;
 using RockPaperScissors.Domain.Enums;
 using RockPaperScissors.Domain.Exceptions;
+using RockPaperScissors.Domain.Models.Response;
 using RockPaperScissors.Service;
 using System.Net;
 using Xunit;

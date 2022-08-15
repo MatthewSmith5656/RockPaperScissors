@@ -1,4 +1,7 @@
-﻿namespace MLS.Framework.Common.Response
+﻿//add to nuget
+using MLS.Framework.Common.Enums;
+
+namespace MLS.Framework.Common.ResponseModel
 {
     public class MlsResponse<TData>
     {

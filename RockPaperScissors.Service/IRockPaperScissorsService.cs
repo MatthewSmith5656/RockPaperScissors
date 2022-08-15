@@ -1,4 +1,5 @@
-﻿using MLS.Framework.Common.Response;
+﻿using MLS.Framework.Common.ResponseModel;
+using RockPaperScissors.Domain.Models.Response;
 
 namespace RockPaperScissors.Service
 {

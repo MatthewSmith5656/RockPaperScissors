@@ -1,6 +1,8 @@
-﻿using MLS.Framework.Common.Response;
+﻿using MLS.Framework.Common.Enums;
+using MLS.Framework.Common.ResponseModel;
 using RockPaperScissors.Domain.Enums;
 using RockPaperScissors.Domain.Exceptions;
+using RockPaperScissors.Domain.Models.Response;
 
 namespace RockPaperScissors.Service
 {
@@ -46,6 +48,7 @@ namespace RockPaperScissors.Service
                 throw new WeaponServiceFailedException("Weapon Service Failed Unexpectedly");
             }
         }
+
         private WinnerResponse PlayGame(string playerOneChoice, string playerTwoChoice)
         {
             WinnerResponse winner = new()
@@ -72,7 +75,7 @@ namespace RockPaperScissors.Service
                     break;
                 case WeaponsEnum.Paper:
                     if (playerTwoChoice == "Rock")
-                        winner = WinnerEnum.PlayerTwo;
+                        winner = WinnerEnum.PlayerOne;
                     if (playerTwoChoice == "Paper")
                         winner = WinnerEnum.Tie;
                     if (playerTwoChoice == "Scissors")

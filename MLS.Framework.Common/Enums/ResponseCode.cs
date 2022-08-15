@@ -1,4 +1,6 @@
-﻿namespace MLS.Framework.Common.Response
+﻿//add to nuget
+
+namespace MLS.Framework.Common.Enums
 {
     public enum ResponseCode
     {

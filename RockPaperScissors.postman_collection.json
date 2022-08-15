@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "ad7dd6d7-6d32-4235-b55b-cebbcc6b1585",
+		"name": "RockPaperScissors",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Positive Tests",
+			"item": [
+				{
+					"name": "Get Winner",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"The response has all properties\", () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson.responseCode).to.eql(0);\r",
+									"    pm.expect(responseJson.data).to.not.null;\r",
+									"    pm.expect(responseJson.data.winner).to.not.null;\r",
+									"    pm.expect(responseJson.data.playerOneWeapon).to.not.null;\r",
+									"    pm.expect(responseJson.data.playerTwoWeapon).to.not.null;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Winner value is in valid list\", () => {\r",
+									"        const responseJson = pm.response.json();\r",
+									"  pm.expect(responseJson.data.winner)\r",
+									"    .to.be.oneOf([\"PlayerOne\", \"PlayerTwo\", \"Tie\"]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Player one value is in valid list\", () => {\r",
+									"  const responseJson = pm.response.json();\r",
+									"  pm.expect(responseJson.data.playerOneWeapon)\r",
+									"    .to.be.oneOf([\"Scissors\", \"Rock\", \"Paper\"]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Player two value is in valid list\", () => {\r",
+									"  const responseJson = pm.response.json();\r",
+									"  pm.expect(responseJson.data.playerTwoWeapon)\r",
+									"    .to.be.oneOf([\"Scissors\", \"Rock\", \"Paper\"]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Outcome is valid\", () => {\r",
+									"  const responseJson = pm.response.json();\r",
+									"  const playerOneWeapon = responseJson.data.playerOneWeapon;\r",
+									"  const playerTwoWeapon = responseJson.data.playerTwoWeapon;\r",
+									"  if(playerOneWeapon == \"Scissors\" && playerTwoWeapon == \"Scissors\" )\r",
+									"  {\r",
+									"    pm.expect(responseJson.data.winner).to.eql(\"Tie\");\r",
+									"  }\r",
+									"    if(playerOneWeapon == \"Scissors\" && playerTwoWeapon == \"Rock\" )\r",
+									"  {\r",
+									"    pm.expect(responseJson.data.winner).to.eql(\"PlayerTwo\");\r",
+									"  }\r",
+									"    if(playerOneWeapon == \"Scissors\" && playerTwoWeapon == \"Paper\" )\r",
+									"  {\r",
+									"    pm.expect(responseJson.data.winner).to.eql(\"PlayerOne\");\r",
+									"  }\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7165/api/winner?playerOneChoice=Scissors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7165",
+							"path": [
+								"api",
+								"winner"
+							],
+							"query": [
+								{
+									"key": "playerOneChoice",
+									"value": "Scissors"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get AI Winner",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7165/api/winner/ai",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7165",
+							"path": [
+								"api",
+								"winner",
+								"ai"
+							],
+							"query": [
+								{
+									"key": "playerOneChoice",
+									"value": "Scissors",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Negative Tests",
+			"item": [
+				{
+					"name": "Get Winner Bad Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"  pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"//url's could be {{Environment}}ect."
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7165/api/winner?playerOneChoice=Scissor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7165",
+							"path": [
+								"api",
+								"winner"
+							],
+							"query": [
+								{
+									"key": "playerOneChoice",
+									"value": "Scissor"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

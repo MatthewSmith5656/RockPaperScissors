@@ -6,9 +6,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using RockPaperScissors.Service;
 using System.Net;
-using MLS.Framework.Common.Response;
 using RockPaperScissors.Domain.Enums;
 using System.Linq;
+using MLS.Framework.Common.ResponseModel;
+using RockPaperScissors.Domain.Models.Response;
 
 namespace RockPaperScissors
 {
