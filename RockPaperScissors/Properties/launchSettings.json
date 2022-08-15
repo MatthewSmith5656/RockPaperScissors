@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "RockPaperScissors": {
+      "commandName": "Project",
+      "commandLineArgs": "host start --port 7165",
+      "launchBrowser": false
+    }
+  }
+}
