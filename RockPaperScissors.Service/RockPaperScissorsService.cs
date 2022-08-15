@@ -29,7 +29,6 @@ namespace RockPaperScissors.Service
             {
                 throw new WeaponServiceFailedException("Weapon Service Failed Unexpectedly");
             }
-
         }
     }
 }

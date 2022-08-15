@@ -2,6 +2,6 @@
 {
     public class WeaponResponse
     {
-        public string? Weapon {get; set;}
+        public string Weapon { get; set; }
     }
 }
