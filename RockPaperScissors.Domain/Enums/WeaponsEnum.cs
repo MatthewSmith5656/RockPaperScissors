@@ -1,4 +1,4 @@
-﻿namespace RockPaperScissors.Domain
+﻿namespace RockPaperScissors.Domain.Enums
 {
     public enum WeaponsEnum
     {

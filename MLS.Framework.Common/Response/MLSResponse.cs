@@ -1,6 +1,4 @@
-﻿using MLS.Framework.Common.Response;
-
-namespace MLS.Framework.Common
+﻿namespace MLS.Framework.Common.Response
 {
     public class MlsResponse<TData>
     {

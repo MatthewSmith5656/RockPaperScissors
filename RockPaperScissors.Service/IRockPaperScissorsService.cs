@@ -1,9 +1,11 @@
-﻿using MLS.Framework.Common;
+﻿using MLS.Framework.Common.Response;
 
 namespace RockPaperScissors.Service
 {
     public interface IRockPaperScissorsService
     {
-        MlsResponse<WeaponResponse> GetRandomWeapon();
+        MlsResponse<WinnerResponse> GetWinner(string playerChoice);
+
+        MlsResponse<WinnerResponse> GetAIWinner();
     }
 }
