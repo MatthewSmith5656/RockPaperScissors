@@ -1,8 +1,8 @@
 Rock Paper Scissors
 
-run RockPaperScissors Funtion
+Run RockPaperScissors Funtion
 Run front end
-play
+Play
 
 typically like devops wiki
 
@@ -20,3 +20,5 @@ unit test coverage 100%
 
 create packages
 Dockerize& devops
+
+Change game logic to algorithm
