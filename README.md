@@ -1,8 +1,8 @@
 Rock Paper Scissors
 
-Run RockPaperScissors Funtion
-Run front end
-Play
+Run RockPaperScissors Azure Funtion
+
+Play using api calls in postman after importing the postman collection
 
 typically like devops wiki
 
