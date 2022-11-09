@@ -4,7 +4,7 @@ Run RockPaperScissors Azure Funtion
 
 Play using api calls in postman after importing the postman collection
 
-typically like devops wiki
+
 
 basic postman pack attached, includes basic tests(could be more extensibly written)
 
